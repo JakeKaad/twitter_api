@@ -1,4 +1,11 @@
+<% @hashtags_by_amount.each do |hashtag| %>
+  <%= "Hashtag: #{hashtag[0]} in #{hashtag[1]} tweets" %>
+  <br>
+<% end %>
+
+
 <% @tweets.each do |tweet| %>
   <%= "#{tweet.user.screen_name}: #{tweet.text}" %>
+  <br>
   <br>
 <% end %>

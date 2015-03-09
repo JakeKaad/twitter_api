@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
   def home
     find_hashtags
     parse_hashtags
+    @tweets = @tweets
   end
 
   def tweets
@@ -34,16 +35,19 @@ class StaticPagesController < ApplicationController
 
     def parse_hashtags
       find_hashtag_occurence
-      @hashtags_by_amount.sort_by { |_key, value| value}
+      @hashtags_by_amount = @hashtags_by_amount.sort_by { |_key, value| value}.reverse.first(20)
     end
 
     def find_hashtag_occurence
       @hashtags_by_amount = {}
       @hashtags.each do |hashtag|
-        if !hastags_by_amount.keys.include?(hashtag)
-          @hashtags[hashtag] += 1
-        else
-          @hashtags[hashtag] = 1
+        text = hashtag.text.downcase
+        unless ['portland', 'pdx', 'jobs', 'job', 'or', 'oregon', 'jobs4u', 'tweetmyjobs', 'gigs', 'gigs4u', 'usa', 'maine', 'seattle', 'hiremob', 'veteranjob'].include?(text)
+          if @hashtags_by_amount.keys.include?(text)
+            @hashtags_by_amount[text] += 1
+          else
+            @hashtags_by_amount[text] = 1
+          end
         end
       end
     end
