@@ -1,0 +1,4 @@
+<% @tweets.each do |tweet| %>
+  <%= "#{tweet.user.screen_name}: #{tweet.text}" %>
+  <br>
+<% end %>
