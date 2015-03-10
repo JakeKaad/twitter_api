@@ -19,8 +19,8 @@ class StaticPagesController < ApplicationController
 
     def get_tweets
       @tweets_json_array = []
-      @tweets_portland = $twitter.search("#portland -rt")
-      @tweets_json_array << @tweets_portland 
+      # @tweets_portland = $twitter.search("#portland -rt")
+      # @tweets_json_array << @tweets_portland 
       @tweets_pdx = $twitter.search('#pdx -rt')
       @tweets_json_array << @tweets_pdx
 
