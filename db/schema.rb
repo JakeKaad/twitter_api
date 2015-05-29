@@ -11,6 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150529194515) do
+
+  create_table "hashtags", force: :cascade do |t|
+    t.integer "tweet_id"
+    t.string  "tag"
+    t.integer "occurences"
+  end
+
+  create_table "tweets", force: :cascade do |t|
+    t.string   "tweet_id"
+    t.datetime "tweeted_at"
+    t.string   "text"
+    t.string   "user"
+    t.string   "user_url"
+    t.string   "user_image_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
