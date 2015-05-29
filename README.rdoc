@@ -1,28 +1,9 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+My spike side project! 
 
-Things you may want to cover:
+I want to find out what people are people are also tagging when they tag #portland.  I thought it might create 
+some interesting data about what is trending in Portland.  What I found is that it is mostly job recruiters.
 
-* Ruby version
+I will likely add some UI to allow you to filter based on date, and exclude some of the less interesting tags.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
